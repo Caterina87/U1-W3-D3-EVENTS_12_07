@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crazione Task list</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>La mia "to do" list</h1>
+    <form onsubmit="aggiungiTask(event)">
+      <input type="text" id="task" placeholder="Inserisci il tuo task" required />
+
+      <button>Aggiungi alla lista</button>
+    </form>
+
+    <div class="taskList"></div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
