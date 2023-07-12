@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crazione Task list</title>
-    <link rel="stylesheet" href="style.css" />
+    <style>
+      .completo {
+        text-decoration: line-through;
+      }
+    </style>
   </head>
   <body>
     <h1>La mia "to do" list</h1>
@@ -14,7 +18,7 @@
       <button>Aggiungi alla lista</button>
     </form>
 
-    <div class="taskList"></div>
+    <ul id="idtaskList"></ul>
 
     <script src="index.js"></script>
   </body>

@@ -1,22 +1,27 @@
 const aggiungiTask = (submitEvent) => {
   submitEvent.preventDefault();
-  console.log("sono qui");
+
   const form = submitEvent.target;
-  console.log(form);
-  const inputList = form.elements;
-  console.log(inputList);
-  const task = {};
-  for (let i = 0; i < inputList.length; i++) {
-    if (inputList[i].tagName !== "BUTTON") {
-      const valoreInput = inputList[i].value;
-      const idInput = inputList[i].id;
-      task[idInput] = valoreInput;
-    }
-  }
-  console.log(task);
-  const container = document.querySelector("taskList");
+  const input = submitEvent.target.elements[0].value;
+
+  /*const container = document.getElementById("idtaskList");
   console.log(container);
   const li = document.createElement("li");
-  li.innerText = task.idInput;
+  li.innerText = input;
   container.appendChild(li);
+*/
+
+  const ul = document.querySelector("ul");
+  ul.innerHTML += `<li> 
+    <span onclick='completa(event)'> ${input} </span> 
+    <button onclick='elimina(event)'> ELIMINA </button> 
+  </li>`;
+};
+
+const completa = (clickEvent) => {
+  clickEvent.target.classList.toggle("completo");
+};
+
+const elimina = (clickEvent) => {
+  clickEvent.target.parentElement.style.display = "none";
 };
